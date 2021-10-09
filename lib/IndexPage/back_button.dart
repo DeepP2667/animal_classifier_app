@@ -12,7 +12,7 @@ class IndexBackButton extends StatelessWidget {
   );
 
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    primary: Colors.cyan[100],
+    primary: Colors.blue[100],
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(12.0),
     ),
@@ -22,7 +22,7 @@ class IndexBackButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: const Alignment(0,0.85),
-      child: ElevatedButton(
+      child: OutlinedButton(
         style: buttonStyle,
         onPressed: () {
           Navigator.pop(
