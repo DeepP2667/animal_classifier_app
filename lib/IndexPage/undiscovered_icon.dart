@@ -26,7 +26,7 @@ class UndiscoveredIcon extends StatelessWidget {
       ),
       child: ElevatedButton(
         style: buttonStyle,
-        onPressed: null,
+        onPressed: () {print("hi");},
         child: Text(
           "?",
           style: textStyle,

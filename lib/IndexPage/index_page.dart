@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import "./header.dart";
 import './back_button.dart';
+import './undiscovered_row.dart';
 
 class IndexPage extends StatelessWidget {
   const IndexPage({Key? key}) : super(key: key);
@@ -14,14 +15,16 @@ class IndexPage extends StatelessWidget {
         children: [
           IndexHeader(),
           const Divider(
-            color: Color(0XFFB3E5FC),
-            thickness: 10.0,
+            color: Color(0XFFBBDEFB),
+            thickness: 7.0,
           ),
           Expanded(
             child: Container(
-              margin: const EdgeInsets.only(top: 20.0, left: 15.0),
+              margin: const EdgeInsets.only(top: 20.0),
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                   colors: <Color>[
                     Color(0XFFE3F2FD),
                     Color(0XFFECEFF1),
@@ -32,9 +35,26 @@ class IndexPage extends StatelessWidget {
                 children: [
                   SingleChildScrollView(
                     child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: const [
-                        Text("hi", style: TextStyle(fontSize: 50)),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
+                        UndiscoveredRow(),
                       ],
                     ),
                   ),

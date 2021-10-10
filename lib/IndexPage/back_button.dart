@@ -12,7 +12,7 @@ class IndexBackButton extends StatelessWidget {
   );
 
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    primary: Colors.blue[100],
+    primary: Colors.orange[100],
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(12.0),
     ),

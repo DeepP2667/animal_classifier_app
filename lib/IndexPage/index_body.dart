@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 
-import 'back_button.dart';
+import './back_button.dart';
 
 class IndexBody extends StatelessWidget {
   const IndexBody({Key? key}) : super(key: key);
