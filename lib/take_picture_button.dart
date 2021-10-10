@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 
+import 'package:google_fonts/google_fonts.dart';
+
 class TakePicture extends StatelessWidget {
   TakePicture({Key? key}) : super(key: key);
 
   final String pictureText = "Take picture";
 
-  final TextStyle textStyle = TextStyle(
-    fontSize: 20,
-    color: Colors.grey[700],
-    fontWeight: FontWeight.bold,
+  final TextStyle textStyle = GoogleFonts.stoke(
+    textStyle: TextStyle(
+      fontSize: 18,
+      color: Colors.grey[700],
+      fontWeight: FontWeight.bold,
+    ),
   );
 
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(

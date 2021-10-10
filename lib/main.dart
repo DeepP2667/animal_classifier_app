@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-import './take_picture.dart';
-import './index.dart';
+import './take_picture_button.dart';
+import './index_button.dart';
 
-void main() => runApp(const MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -13,17 +21,28 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "My App",
-      home: Scaffold( 
-        backgroundColor: Colors.amber[100],
-        body: Center(
+      home: Scaffold(
+        body: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: <Color>[
+                Color(0XFFFFE082),
+                Color(0XFFFFE0B2),
+              ],
+            ),
+          ),
+          child: Center(
             child: Stack(
-              children: [ 
+              children: [
                 TakePicture(),
-                Index(),
+                IndexButton(),
               ],
             ),
           ),
         ),
+      ),
     );
   }
 }
