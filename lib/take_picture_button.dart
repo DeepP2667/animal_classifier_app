@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:google_fonts/google_fonts.dart';
+
+import 'Classify/classify_homepage.dart';
 
 class TakePicture extends StatelessWidget {
   TakePicture({Key? key}) : super(key: key);
@@ -25,7 +26,7 @@ class TakePicture extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const Alignment(0,.3),
+      alignment: const Alignment(0, .3),
       child: Container(
         width: 200,
         height: 100,
@@ -33,7 +34,14 @@ class TakePicture extends StatelessWidget {
         margin: const EdgeInsets.all(14.0),
         child: ElevatedButton(
           style: buttonStyle,
-          onPressed: null,
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CameraPage(),
+              ),
+            );
+          },
           child: Text(
             pictureText,
             style: textStyle,
