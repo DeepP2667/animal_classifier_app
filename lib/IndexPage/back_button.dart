@@ -21,7 +21,7 @@ class IndexBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const Alignment(0,0.85),
+      alignment: const Alignment(0, 0.85),
       child: OutlinedButton(
         style: buttonStyle,
         onPressed: () {
@@ -32,10 +32,7 @@ class IndexBackButton extends StatelessWidget {
             ),
           );
         },
-        child: Text(
-          "<-",
-          style: textStyle,
-        ),
+        child: Icon(Icons.arrow_back_ios_new_outlined, color: Colors.grey[600],)
       ),
     );
   }
