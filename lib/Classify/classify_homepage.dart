@@ -54,9 +54,12 @@ class _CameraPageState extends State<CameraPage> {
         body: Container(
           decoration: const BoxDecoration(
             gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
               colors: [
-                Color(0xFFD6D6D6),
-                Color(0xFFEEEEEE),
+                Color(0xFF04323a),
+                Color(0xFF0b8eab),
+                Color(0xFFd1dcde),
               ],
             ),
           ),
@@ -69,9 +72,9 @@ class _CameraPageState extends State<CameraPage> {
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
-            backgroundColor: Colors.teal[100],
-            unselectedItemColor: Colors.blueGrey[700],
-            selectedItemColor: Colors.blueGrey[700],
+            backgroundColor: Color(0xFFf7e8e3),
+            unselectedItemColor: Color(0xFF573625),
+            selectedItemColor: Color(0xFF573625),
             items: const [
               BottomNavigationBarItem(
                 icon: Icon(Icons.arrow_back_ios_new_outlined),
