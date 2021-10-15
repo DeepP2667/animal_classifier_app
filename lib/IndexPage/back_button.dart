@@ -5,14 +5,9 @@ import 'package:animal_classifier/main.dart';
 class IndexBackButton extends StatelessWidget {
   IndexBackButton({Key? key}) : super(key: key);
 
-  final TextStyle textStyle = TextStyle(
-    fontSize: 20,
-    color: Colors.grey[700],
-    fontWeight: FontWeight.bold,
-  );
 
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    primary: Colors.orange[100],
+    primary: const Color(0xFF8d6852),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(12.0),
     ),
@@ -32,7 +27,7 @@ class IndexBackButton extends StatelessWidget {
             ),
           );
         },
-        child: Icon(Icons.arrow_back_ios_new_outlined, color: Colors.grey[600],)
+        child: const Icon(Icons.arrow_back_ios_new_outlined, color: Color(0xFFfbefdf),)
       ),
     );
   }

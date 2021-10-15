@@ -4,10 +4,15 @@ import 'package:google_fonts/google_fonts.dart';
 class HeaderTitle extends StatelessWidget {
   HeaderTitle({Key? key}) : super(key: key);
 
+  static Color textColor = Color.alphaBlend(
+    const Color(0xFF8d6852),
+    const Color(0xFF462e25),
+  );
+
   final TextStyle titleTextStyle = GoogleFonts.stoke(
     textStyle: TextStyle(
       fontSize: 25,
-      color: Colors.blue[200],
+      color: textColor,
       fontWeight: FontWeight.bold,
     ),
   );
@@ -15,7 +20,7 @@ class HeaderTitle extends StatelessWidget {
   final TextStyle seenTextStyle = GoogleFonts.stoke(
     textStyle: TextStyle(
       fontSize: 15,
-      color: Colors.blue[200]?.withOpacity(0.6),
+      color: textColor.withOpacity(0.6),
     ),
   );
 
@@ -25,14 +30,14 @@ class HeaderTitle extends StatelessWidget {
       child: Stack(
         children: [
           Align(
-            alignment: const Alignment(0,-0.6),
+            alignment: const Alignment(0, -0.6),
             child: Text(
               "INDEX",
               style: titleTextStyle,
             ),
           ),
           Align(
-            alignment: const Alignment(0,.3),
+            alignment: const Alignment(0, .3),
             child: Text(
               "Found: ",
               style: seenTextStyle,

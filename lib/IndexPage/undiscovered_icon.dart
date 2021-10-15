@@ -3,15 +3,20 @@ import 'package:flutter/material.dart';
 class UndiscoveredIcon extends StatelessWidget {
   UndiscoveredIcon({Key? key}) : super(key: key);
 
-  final TextStyle textStyle = TextStyle(
+  final TextStyle textStyle = const TextStyle(
     fontSize: 20,
-    color: Colors.grey[700],
+    color: Color(0xFF8d6852),
     fontWeight: FontWeight.bold,
+  );
+  
+   static Color backgroundColor = Color.alphaBlend(
+    const Color(0xFFfbefdf),
+    const Color(0xFF462e25),
   );
 
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
     fixedSize: const Size(85, 75),
-    primary: Colors.blue[100],
+    primary: backgroundColor,
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(12.0),
     ),
