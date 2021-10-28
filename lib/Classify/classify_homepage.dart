@@ -1,11 +1,13 @@
 import 'dart:io';
+import './image_display.dart';
+
 import 'package:google_ml_kit/google_ml_kit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 
-import './image_display.dart';
 import 'package:animal_classifier/main.dart';
+import 'package:animal_classifier/IndexPage/AboutPage/about_page.dart';
 
 class CameraPage extends StatefulWidget {
   const CameraPage({Key? key}) : super(key: key);
@@ -91,8 +93,11 @@ class _CameraPageState extends State<CameraPage> {
     primary: buttonBackgroundColor,
   );
 
+  // AboutPage x = AboutPage();
+  
   @override
   Widget build(BuildContext context) {
+    // x.updateFound();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
