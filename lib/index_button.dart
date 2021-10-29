@@ -39,7 +39,7 @@ class IndexButton extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => const IndexPage(),
+                builder: (context) => IndexPage(),
               ),
             );
           },
