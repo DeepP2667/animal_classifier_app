@@ -17,27 +17,43 @@ class CameraPage extends StatefulWidget {
 }
 
 class _CameraPageState extends State<CameraPage> {
+  // [_imageFile] will be the image that is displayed
   File? _imageFile;
   late InputImage inputImage;
   late int selectedIndex;
 
   final imageLabeler = GoogleMlKit.vision.imageLabeler();
 
-  Future gallary() async {
-    final imageFile =
-        await ImagePicker().pickImage(source: ImageSource.gallery);
+  // Grabs image from selected source and classifies it.
+  //
+  // The function uses [camera] and [gallery]
+  // to determine which source they are using.
+  Future imageOption({bool camera = false, bool gallery = false}) async {
+    // [imageFile] is the file of image picked from source
+    late XFile? imageFile;
 
-    if (imageFile == null) {
-      return null;
+    // If camera is true, allows user to choose image from camera
+    // If gallery is true, allows user to choose image from gallery
+    if (camera) {
+      imageFile = await ImagePicker().pickImage(source: ImageSource.camera);
+    } else if (gallery) {
+      imageFile = await ImagePicker().pickImage(source: ImageSource.gallery);
     }
 
-    final tempImageFile = File(imageFile.path);
+    // If imageFile is null, there is no image. Return null
+    if (imageFile == null) {
+      return null;
+    } else {
+      // Set new state to have [_imageFile] be set to image file picked by user
+      setState(() {
+        _imageFile = File(imageFile!.path);
+      });
+    }
+
+    // [inputImage] will be used to classify the image
     inputImage = InputImage.fromFilePath(imageFile.path);
 
-    setState(() {
-      _imageFile = tempImageFile;
-    });
-
+    // [labels] is a list of all possible classifications of the image
     final List<ImageLabel> labels = await imageLabeler.processImage(inputImage);
 
     for (ImageLabel label in labels) {
@@ -50,37 +66,13 @@ class _CameraPageState extends State<CameraPage> {
     imageLabeler.close();
   }
 
-  Future camera() async {
-    final imageFile = await ImagePicker().pickImage(source: ImageSource.camera);
-
-    if (imageFile == null) {
-      return null;
-    }
-
-    final tempImageFile = File(imageFile.path);
-    inputImage = InputImage.fromFilePath(imageFile.path);
-
-    setState(() {
-      _imageFile = tempImageFile;
-    });
-
-    final List<ImageLabel> labels = await imageLabeler.processImage(inputImage);
-
-    for (ImageLabel label in labels) {
-      final String text = label.label;
-      final int index = label.index;
-      final double confidence = label.confidence;
-      print("$text,  $index,  $confidence");
-    }
-
-    imageLabeler.close();
-  }
-
+  // [buttonBackgroundColor] is a blend of 2 colors for the background
   static Color buttonBackgroundColor = Color.alphaBlend(
     const Color(0xFFcc9764),
     const Color(0xFF573625),
   );
 
+  // [textStyle] is the style of the text
   final TextStyle textStyle = GoogleFonts.stoke(
     textStyle: const TextStyle(
       fontSize: 22,
@@ -89,15 +81,16 @@ class _CameraPageState extends State<CameraPage> {
     ),
   );
 
+  // [buttonStyle] is the style of the button
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
     primary: buttonBackgroundColor,
   );
 
-  AboutPage x = AboutPage();
-  
+  // AboutPage x = AboutPage();   <- Used for database. Update soon
+
   @override
   Widget build(BuildContext context) {
-    x.updateFound();
+    // x.updateFound();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -125,7 +118,9 @@ class _CameraPageState extends State<CameraPage> {
                       height: 100,
                       child: ElevatedButton(
                         style: buttonStyle,
-                        onPressed: (){print("test- remove later");},
+                        onPressed: () {
+                          print("test- remove later");
+                        },
                         child: Text("Classify", style: textStyle),
                       ),
                     ),
@@ -157,6 +152,7 @@ class _CameraPageState extends State<CameraPage> {
               switch (selectedIndex) {
                 case 0:
                   {
+                    // Case 0 goes back to the home page
                     Navigator.push(
                       context,
                       MaterialPageRoute(
@@ -168,13 +164,15 @@ class _CameraPageState extends State<CameraPage> {
 
                 case 1:
                   {
-                    camera();
+                    // Case 1 opens camera
+                    imageOption(camera: true);
                     break;
                   }
 
                 case 2:
                   {
-                    gallary();
+                    // Case 2 opens gallery
+                    imageOption(gallery: true);
                     break;
                   }
               }
