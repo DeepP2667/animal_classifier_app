@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class ImageDisplay extends StatelessWidget {
+  // [imageFile] will be the file of the image
   final dynamic imageFile;
 
   ImageDisplay({Key? key, required this.imageFile}) : super(key: key);
 
+  // [textStyle] is the style of the text
   final TextStyle textStyle = GoogleFonts.stoke(
     textStyle: const TextStyle(
       fontSize: 22,
@@ -14,7 +16,11 @@ class ImageDisplay extends StatelessWidget {
     ),
   );
 
+  // Check if image is there.
+  //
+  // Function parameter is [width] which is width of device
   Widget checkImage(width) {
+    // If [imageFile] is null, return a Container widget with Text
     if (imageFile == null) {
       return Container(
         width: width,
@@ -30,6 +36,7 @@ class ImageDisplay extends StatelessWidget {
       );
     }
 
+    // If [imageFile] is not null, return the image
     return Image.file(
       imageFile,
     );
