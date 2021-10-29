@@ -93,11 +93,11 @@ class _CameraPageState extends State<CameraPage> {
     primary: buttonBackgroundColor,
   );
 
-  // AboutPage x = AboutPage();
+  AboutPage x = AboutPage();
   
   @override
   Widget build(BuildContext context) {
-    // x.updateFound();
+    x.updateFound();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
