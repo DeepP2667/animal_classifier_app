@@ -7,7 +7,6 @@ class ImageDisplay extends StatelessWidget {
 
   ImageDisplay({Key? key, required this.imageFile}) : super(key: key);
 
-  // [textStyle] is the style of the text
   final TextStyle textStyle = GoogleFonts.stoke(
     textStyle: const TextStyle(
       fontSize: 22,

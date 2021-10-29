@@ -66,13 +66,11 @@ class _CameraPageState extends State<CameraPage> {
     imageLabeler.close();
   }
 
-  // [buttonBackgroundColor] is a blend of 2 colors for the background
   static Color buttonBackgroundColor = Color.alphaBlend(
     const Color(0xFFcc9764),
     const Color(0xFF573625),
   );
 
-  // [textStyle] is the style of the text
   final TextStyle textStyle = GoogleFonts.stoke(
     textStyle: const TextStyle(
       fontSize: 22,
@@ -81,7 +79,6 @@ class _CameraPageState extends State<CameraPage> {
     ),
   );
 
-  // [buttonStyle] is the style of the button
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
     primary: buttonBackgroundColor,
   );
