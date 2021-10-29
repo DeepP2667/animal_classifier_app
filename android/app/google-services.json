@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "493689207460",
+    "project_id": "animalclassifier-a07e6",
+    "storage_bucket": "animalclassifier-a07e6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493689207460:android:024c4fc3d352dea62a4431",
+        "android_client_info": {
+          "package_name": "com.example.animal_classifier"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493689207460-7v6lotfepkjmfksr7tre3e8omoqv0hj2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6NphIgJu6nqne3K27aBr3fwO_i9F3JwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493689207460-7v6lotfepkjmfksr7tre3e8omoqv0hj2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
