@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:animal_classifier/main.dart';
+import 'package:animal_classifier/home_page.dart';
 
 class IndexBackButton extends StatelessWidget {
   IndexBackButton({Key? key}) : super(key: key);

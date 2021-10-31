@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
 
-import 'package:animal_classifier/main.dart';
+import 'package:animal_classifier/home_page.dart';
 import 'package:animal_classifier/IndexPage/AboutPage/about_page.dart';
 
 class CameraPage extends StatefulWidget {
