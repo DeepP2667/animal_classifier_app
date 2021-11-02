@@ -18,20 +18,20 @@ class SignUpBackground extends CustomPainter {
     mainBackground.addRect(Rect.fromLTRB(0, 0, width, height));
     backgroundPaint.color = const Color(0xFF303030);
     canvas.drawPath(mainBackground, backgroundPaint);
-  
+
     var rect = Offset.zero & size;
     Offset center = Offset(width * 0.5, height * 0.68);
 
     // [circlePaint] is the paint with a linear gradient of 3 different colors.
     // Starts from top center to bottom center
     Paint circlePaint = Paint()
-      ..shader = const LinearGradient(
+      ..shader = LinearGradient(
         begin: Alignment.topCenter,
         end: Alignment.bottomCenter,
         colors: [
-          Color(0xFF8229DE),
-          Color(0xFFA51FF0),
-          Color(0xFF3856E7),
+          const Color(0xFFFFEC19).withOpacity(0.8),
+          const Color(0xFFFFC100).withOpacity(0.8),
+          const Color(0xFFFF9800).withOpacity(0.8),
         ],
       ).createShader(rect);
     canvas.drawCircle(center, radius, circlePaint);

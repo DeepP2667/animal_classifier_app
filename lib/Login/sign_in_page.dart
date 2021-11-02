@@ -7,11 +7,18 @@ import 'sign_in_background.dart';
 class SignInPage extends StatelessWidget {
   SignInPage({Key? key}) : super(key: key);
 
-  final TextStyle textStyle = GoogleFonts.stoke(
+  final TextStyle signinTextStyle = GoogleFonts.openSans(
     textStyle: const TextStyle(
-      fontSize: 27,
+      fontSize: 30,
       color: Color(0xFF000000),
       fontWeight: FontWeight.bold,
+    ),
+  );
+
+  final TextStyle continueTextStyle = GoogleFonts.openSans(
+    textStyle: TextStyle(
+      fontSize: 15,
+      color: const Color(0xFF000000).withOpacity(0.5),
     ),
   );
 
@@ -22,7 +29,7 @@ class SignInPage extends StatelessWidget {
         painter: SignUpBackground(),
         child: Container(
           decoration: BoxDecoration(
-            color: Color(0xFFECEFF1),
+            color: const Color(0xFFECEFF1),
             border: Border.all(
               color: const Color(0XFFFFE082),
             ),
@@ -38,7 +45,14 @@ class SignInPage extends StatelessWidget {
                   alignment: const Alignment(-1, 0),
                   child: SizedBox(
                     height: 300,
-                    child: Text("SIGN IN", style: textStyle),
+                    child: Text("SIGN IN", style: signinTextStyle),
+                  ),
+                ),
+                Align(
+                  alignment: const Alignment(-1, -.18),
+                  child: SizedBox(
+                    height: 100,
+                    child: Text("Please sign in to continue.", style: continueTextStyle),
                   ),
                 ),
                 Align(
@@ -50,7 +64,7 @@ class SignInPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const LoginButton(),
+                LoginButton(),
               ],
             ),
           ),
