@@ -25,7 +25,7 @@ https://docs.kony.com/konylibrary/visualizer/visualizer_user_guide/Content/Andro
 
 Locate the main file
 ```
-animal_classifier_app\lib\main.dart
+animal_classifier_app\lib\home_page.dart
 ```
 Right click and run without debugging
 
