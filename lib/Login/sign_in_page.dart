@@ -15,6 +15,18 @@ class SignInPage extends StatelessWidget {
     ),
   );
 
+  final TextStyle signUpTextStyle = GoogleFonts.openSans(
+    textStyle: const TextStyle(
+      fontSize: 12,
+    ),
+  );
+
+  final TextStyle signUpButton = GoogleFonts.openSans(
+    textStyle: const TextStyle(
+      fontSize: 12,
+    ),
+  );
+
   final TextStyle continueTextStyle = GoogleFonts.openSans(
     textStyle: TextStyle(
       fontSize: 15,
@@ -25,15 +37,13 @@ class SignInPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: CustomPaint(
         painter: SignUpBackground(),
         child: Container(
-          decoration: BoxDecoration(
-            color: const Color(0xFFECEFF1),
-            border: Border.all(
-              color: const Color(0XFFFFE082),
-            ),
-            borderRadius: const BorderRadius.all(Radius.circular(30)),
+          decoration: const BoxDecoration(
+            color: Color(0xFFECEFF1),
+            borderRadius: BorderRadius.all(Radius.circular(30)),
           ),
           padding: const EdgeInsets.all(30),
           margin:
@@ -52,19 +62,37 @@ class SignInPage extends StatelessWidget {
                   alignment: const Alignment(-1, -.18),
                   child: SizedBox(
                     height: 100,
-                    child: Text("Please sign in to continue.", style: continueTextStyle),
+                    child: Text("Please sign in to continue.",
+                        style: continueTextStyle),
                   ),
                 ),
                 Align(
                   alignment: const Alignment(0, 0),
                   child: TextFormField(
+                    style: const TextStyle(fontSize: 15),
                     decoration: const InputDecoration(
+                      suffixIcon: Icon(Icons.person),
                       border: UnderlineInputBorder(),
                       labelText: 'Username',
                     ),
                   ),
                 ),
                 LoginButton(),
+                Align(
+                  alignment: const Alignment(0, 1),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Don't have an account? ", style: signUpTextStyle),
+                      TextButton(
+                        onPressed: () {
+                          print("hi");
+                        },
+                        child: Text("Sign up", style: signUpTextStyle),
+                      ),
+                    ],
+                  ),
+                ),
               ],
             ),
           ),
