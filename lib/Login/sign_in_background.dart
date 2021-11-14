@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
 
-class SignUpBackground extends CustomPainter {
+class SignInBackground extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     // [height] gives the height of canvas

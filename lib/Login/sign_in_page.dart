@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'login_button.dart';
+import 'package:animal_classifier/Login/sign_up_page.dart';
 import 'sign_in_background.dart';
 
 class SignInPage extends StatelessWidget {
@@ -39,7 +40,7 @@ class SignInPage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: CustomPaint(
-        painter: SignUpBackground(),
+        painter: SignInBackground(),
         child: Container(
           decoration: const BoxDecoration(
             color: Color(0xFFECEFF1),
@@ -86,7 +87,12 @@ class SignInPage extends StatelessWidget {
                       Text("Don't have an account? ", style: signUpTextStyle),
                       TextButton(
                         onPressed: () {
-                          print("hi");
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SignUpPage(),
+                            ),
+                          );
                         },
                         child: Text("Sign up", style: signUpTextStyle),
                       ),
