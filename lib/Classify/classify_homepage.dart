@@ -97,9 +97,9 @@ class _CameraPageState extends State<CameraPage> {
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Color(0xFF04323a),
-                Color(0xFF0b8eab),
-                Color(0xFFd1dcde),
+                Color(0xFF303030),
+                Color(0xFF22272c),
+                Color(0xFF616063),
               ],
             ),
           ),
@@ -150,11 +150,8 @@ class _CameraPageState extends State<CameraPage> {
                 case 0:
                   {
                     // Case 0 goes back to the home page
-                    Navigator.push(
+                    Navigator.pop(
                       context,
-                      MaterialPageRoute(
-                        builder: (context) => const MyApp(),
-                      ),
                     );
                     break;
                   }
