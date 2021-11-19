@@ -1,14 +1,18 @@
 import 'dart:async';
+import 'package:animal_classifier/dunes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-import './take_picture_button.dart';
-import './index_button.dart';
+import 'index_button.dart';
+import 'take_picture_button.dart';
+import 'dunes.dart';
+import 'ground_background.dart';
+import 'background.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Set device orientation to only be vertical
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
@@ -17,7 +21,7 @@ Future<void> main() async {
 
   await Firebase.initializeApp();
 
-  runApp(const MyApp());
+  runApp(const MaterialApp(debugShowCheckedModeBanner: false, home: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -25,30 +29,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: "My App",
-      home: Scaffold(
-        body: Container(
-          decoration: const BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topCenter,
-              end: Alignment.bottomCenter,
-              colors: <Color>[
-                Color(0XFFFFE082),
-                Color(0XFFFFE0B2),
-              ],
+    return Scaffold(
+      body: Stack(
+        children: [
+          CustomPaint(
+            painter: Background(),
+            child: ClipPath(
+              clipper: FirstDune(),
+              child: Container(
+                height: 1.5 * MediaQuery.of(context).size.height / 2,
+                color: Colors.blue[100],
+              ),
             ),
           ),
-          child: Center(
-            child: Stack(
-              children: [
-                TakePicture(),
-                IndexButton(),
-              ],
+          CustomPaint(
+            painter: Ground(),
+            child: Center(
+              child: Stack(
+                children: [
+                  TakePicture(),
+                  IndexButton(),
+                ],
+              ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }
