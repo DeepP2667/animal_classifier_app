@@ -13,13 +13,13 @@ class IndexButton extends StatelessWidget {
   final TextStyle textStyle = GoogleFonts.stoke(
     textStyle: TextStyle(
       fontSize: 18,
-      color: Colors.grey[700],
+      color: const Color(0xFF4d290b).withOpacity(0.8),
       fontWeight: FontWeight.bold,
     ),
   );
 
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    primary: Colors.cyan[100],
+    primary: const Color(0xFFfac489),
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(20.0),
     ),
@@ -28,7 +28,7 @@ class IndexButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: const Alignment(0, 0.6),
+      alignment: const Alignment(0, 0.8),
       child: Container(
         width: 200,
         height: 100,
