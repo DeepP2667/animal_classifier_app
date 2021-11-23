@@ -37,9 +37,23 @@ class MyApp extends StatelessWidget {
             child: ClipPath(
               clipper: FirstDune(),
               child: Container(
-                height: 1.5 * MediaQuery.of(context).size.height / 2,
+                height: 1.51 * MediaQuery.of(context).size.height / 2,
                 color: Colors.blue[100],
               ),
+            ),
+          ),
+          ClipPath(
+            clipper: SecondDune(),
+            child: Container(
+              height: 1.4 * MediaQuery.of(context).size.height / 2,
+              color: Colors.red[100],
+            ),
+          ),
+          ClipPath(
+            clipper: ThirdDune(),
+            child: Container(
+              height: 1.3 * MediaQuery.of(context).size.height / 2,
+              color: Colors.green[100],
             ),
           ),
           CustomPaint(
