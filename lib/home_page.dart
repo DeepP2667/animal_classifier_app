@@ -8,7 +8,7 @@ import 'index_button.dart';
 import 'take_picture_button.dart';
 import 'dunes.dart';
 import 'ground_background.dart';
-import 'background.dart';
+import 'sun.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -32,28 +32,37 @@ class MyApp extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          CustomPaint(
-            painter: Background(),
-            child: ClipPath(
-              clipper: FirstDune(),
-              child: Container(
-                height: 1.51 * MediaQuery.of(context).size.height / 2,
-                color: Colors.blue[100],
-              ),
+          Container(
+            color: const Color(0xFF763300).withOpacity(0.9),
+          ),
+          ClipPath(
+            clipper: FirstDune(),
+            child: Container(
+              height: 1.51 * MediaQuery.of(context).size.height / 2,
+              color: const Color(0XFFa84e13),
             ),
           ),
           ClipPath(
             clipper: SecondDune(),
             child: Container(
               height: 1.4 * MediaQuery.of(context).size.height / 2,
-              color: Colors.red[100],
+              color: const Color(0XFFca6316),
             ),
           ),
           ClipPath(
             clipper: ThirdDune(),
             child: Container(
               height: 1.3 * MediaQuery.of(context).size.height / 2,
-              color: Colors.green[100],
+              color: const Color(0XFFe17218),
+            ),
+          ),
+          ClipPath(
+            clipper: FourthDune(),
+            child: CustomPaint(
+              painter: Suns(),
+              child: Container(
+                height: 1.1 * MediaQuery.of(context).size.height / 2,
+              ),
             ),
           ),
           CustomPaint(
