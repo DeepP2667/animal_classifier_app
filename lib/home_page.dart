@@ -1,14 +1,14 @@
 import 'dart:async';
-import 'package:animal_classifier/dunes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'index_button.dart';
 import 'take_picture_button.dart';
-import 'dunes.dart';
-import 'ground_background.dart';
-import 'sun.dart';
+import 'HomePageArt/dunes.dart';
+import 'HomePageArt/ground_background.dart';
+import 'HomePageArt/sun.dart';
+import 'HomePageArt/sprites.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
               painter: Suns(),
               child: Container(
                 height: 1.1 * MediaQuery.of(context).size.height / 2,
-              ),
+              ), 
             ),
           ),
           CustomPaint(
@@ -70,6 +70,7 @@ class MyApp extends StatelessWidget {
             child: Center(
               child: Stack(
                 children: [
+                  const Sprites(),
                   TakePicture(),
                   IndexButton(),
                 ],

@@ -33,6 +33,7 @@ class IndexButton extends StatelessWidget {
         width: 200,
         height: 100,
         padding: const EdgeInsets.all(12.0),
+        margin: const EdgeInsets.all(14.0),
         child: ElevatedButton(
           style: buttonStyle,
           onPressed: () {

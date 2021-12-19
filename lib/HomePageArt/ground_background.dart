@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class Ground extends CustomPainter {
+  
   @override
   void paint(Canvas canvas, Size size) {
     final height = size.height;
@@ -18,7 +19,7 @@ class Ground extends CustomPainter {
     // Starts from top center to bottom center
     Paint circlePaint = Paint();
     circlePaint.color = circleColor;
-    canvas.drawCircle(center, radius, circlePaint);
+    canvas.drawCircle(center, radius, circlePaint);  
   }
 
   @override
