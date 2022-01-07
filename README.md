@@ -33,4 +33,4 @@ Right click and run without debugging
 
 Backgrounds for homepage and classify page (WIP)
 
-![](https://github.com/DeepP2667/animal_classifier_app/blob/master/github_assets/RunningMainFile.png)
+![](https://github.com/DeepP2667/animal_classifier_app/blob/master/github_assets/HomePage.png)
