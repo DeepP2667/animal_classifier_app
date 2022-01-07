@@ -10,7 +10,7 @@ class Sprites extends StatelessWidget {
       children: [
         Positioned(
           top: MediaQuery.of(context).size.height / 1.3,
-          left: MediaQuery.of(context).size.width * 0.05,
+          right: MediaQuery.of(context).size.width * 0.75,
           child: Image.asset(
             "app_assets/PNG/decor_6.png",
             width: 50,
@@ -18,10 +18,10 @@ class Sprites extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: MediaQuery.of(context).size.height / 2.45,
+          top: MediaQuery.of(context).size.height / 2.3,
           left: MediaQuery.of(context).size.width * 0.01,
           child: Image.asset(
-            "app_assets/PNG/tree_5.png",
+            "app_assets/PNG/tree_10.png",
             width: 100,
             height: 300,
           ),
@@ -50,29 +50,20 @@ class Sprites extends StatelessWidget {
         ),
         Positioned(
           top: MediaQuery.of(context).size.height / 1.9,
-          left: MediaQuery.of(context).size.width * 0.6,
+          left: MediaQuery.of(context).size.width * 0.64,
           child: Image.asset(
-            "app_assets/PNG/stones_9.png",
+            "app_assets/PNG/tree_10.png",
             width: 100,
             height: 300,
           ),
         ),
         Positioned(
-          top: MediaQuery.of(context).size.height / 1.5,
-          left: MediaQuery.of(context).size.width * 0.07,
+          top: MediaQuery.of(context).size.height / 1.8,
+          right: MediaQuery.of(context).size.width * 0.83,
           child: Image.asset(
-            "app_assets/PNG/stones_7.png",
-            width: 50,
-            height: 100,
-          ),
-        ),
-        Positioned(
-          top: MediaQuery.of(context).size.height / 1.5,
-          left: MediaQuery.of(context).size.width * 0.01,
-          child: Image.asset(
-            "app_assets/PNG/stones_6.png",
-            width: 50,
-            height: 100,
+            "app_assets/PNG/tree_10.png",
+            width: 100,
+            height: 300,
           ),
         ),
         Positioned(
@@ -80,8 +71,26 @@ class Sprites extends StatelessWidget {
           left: MediaQuery.of(context).size.width * 0.9,
           child: Image.asset(
             "app_assets/PNG/greenery_10.png",
-            width: 50,
-            height: 75,
+            width: 40,
+            height: 65,
+          ),
+        ),
+        Positioned(
+          top: MediaQuery.of(context).size.height / 1.45,
+          right: MediaQuery.of(context).size.width * 0.7,
+          child: Image.asset(
+            "app_assets/PNG/greenery_10.png",
+            width: 40,
+            height: 65,
+          ),
+        ),
+        Positioned(
+          top: MediaQuery.of(context).size.height / 1.45,
+          left: MediaQuery.of(context).size.width * 0.9,
+          child: Image.asset(
+            "app_assets/PNG/greenery_10.png",
+            width: 40,
+            height: 65,
           ),
         ),
         Positioned(
@@ -89,8 +98,26 @@ class Sprites extends StatelessWidget {
           left: MediaQuery.of(context).size.width * 0.85,
           child: Image.asset(
             "app_assets/PNG/greenery_6.png",
-            width: 50,
-            height: 75,
+            width: 40,
+            height: 65,
+          ),
+        ),
+        Positioned(
+          top: MediaQuery.of(context).size.height / 1.2,
+          left: MediaQuery.of(context).size.width * 0.7,
+          child: Image.asset(
+            "app_assets/PNG/greenery_6.png",
+            width: 40,
+            height: 65,
+          ),
+        ),
+        Positioned(
+          top: MediaQuery.of(context).size.height / 1.45,
+          right: MediaQuery.of(context).size.width * 0.55,
+          child: Image.asset(
+            "app_assets/PNG/tree_10.png",
+            width: 100,
+            height: 300,
           ),
         ),
         Positioned(
