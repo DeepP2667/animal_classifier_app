@@ -65,7 +65,7 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   assets:
-    - app_assets/camel.png      #ADD ASSETS LIKE THIS
+    - app_assets/PNG/    #ADD ASSETS LIKE THIS
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
