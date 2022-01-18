@@ -10,7 +10,7 @@ class ImageDisplay extends StatelessWidget {
   final TextStyle textStyle = GoogleFonts.stoke(
     textStyle: const TextStyle(
       fontSize: 22,
-      color: Color(0xFF573625),
+      color: Color(0xFF2f2126),
       fontWeight: FontWeight.bold,
     ),
   );
@@ -23,8 +23,8 @@ class ImageDisplay extends StatelessWidget {
     if (imageFile == null) {
       return Container(
         width: width,
-        height: 200,
-        color: const Color(0xFFf7e8e3),
+        height: 175,
+        color: const Color(0xFFb9794e),
         padding: const EdgeInsets.all(10),
         child: Center(
           child: Text(
@@ -45,7 +45,7 @@ class ImageDisplay extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: const Alignment(0, -0.5),
-      child: Container(
+      child: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: FittedBox(
@@ -56,3 +56,4 @@ class ImageDisplay extends StatelessWidget {
     );
   }
 }
+                           

@@ -1,13 +1,14 @@
 import 'dart:io';
-import './image_display.dart';
+import 'dart:ui';
+import 'package:flutter/material.dart';
 
 import 'package:google_ml_kit/google_ml_kit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:flutter/material.dart';
 
 import 'package:animal_classifier/home_page.dart';
-import 'package:animal_classifier/IndexPage/AboutPage/about_page.dart';
+import './image_display.dart';
+import './sprites.dart';
 
 class CameraPage extends StatefulWidget {
   const CameraPage({Key? key}) : super(key: key);
@@ -80,45 +81,62 @@ class _CameraPageState extends State<CameraPage> {
   );
 
   final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
-    primary: buttonBackgroundColor,
+    primary: const Color(0xFFcb9167),
   );
 
-  // AboutPage x = AboutPage();   <- Used for database. Update soon
+  final backgroundColor = Color.alphaBlend(
+    const Color(0xFFc8793c),
+    const Color(0xFFa45c1e),
+  );
 
   @override
   Widget build(BuildContext context) {
-    // x.updateFound();
+    double sigmaX = 0;
+    double sigmaY = 0;
+
+    if(_imageFile != null){
+      sigmaX = 3.0;
+      sigmaY = 3.0;
+    }
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
               begin: Alignment.topCenter,
               end: Alignment.bottomCenter,
               colors: [
-                Color(0xFF303030),
-                Color(0xFF22272c),
-                Color(0xFF616063),
+                const Color(0xFFe7a967),
+                const Color(0xFFec9657).withOpacity(0.7),
               ],
             ),
           ),
           child: Center(
             child: Stack(
               children: <Widget>[
+                const ClassifySprites(),
+                BackdropFilter(
+                  filter: ImageFilter.blur(sigmaX: sigmaX, sigmaY: sigmaY),
+                  child: Container(
+                    color: Colors.transparent,
+                  ),
+                ),
                 ImageDisplay(imageFile: _imageFile),
                 Align(
                   alignment: const Alignment(0, 1),
-                  child: Expanded(
-                    child: SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      height: 100,
-                      child: ElevatedButton(
-                        style: buttonStyle,
-                        onPressed: () {
-                          print("test- remove later");
-                        },
-                        child: Text("Classify", style: textStyle),
+                  child: SizedBox(
+                    width: MediaQuery.of(context).size.width,
+                    height: 70,
+                    child: ElevatedButton(
+                      style: buttonStyle,
+                      onPressed: () {
+                        print("test- remove later");
+                      },
+                      child: Text(
+                        "Classify",
+                        style: textStyle,
                       ),
                     ),
                   ),
@@ -150,8 +168,11 @@ class _CameraPageState extends State<CameraPage> {
                 case 0:
                   {
                     // Case 0 goes back to the home page
-                    Navigator.pop(
+                    Navigator.push(
                       context,
+                      MaterialPageRoute(
+                        builder: (context) => const MyApp(),
+                      ),
                     );
                     break;
                   }
